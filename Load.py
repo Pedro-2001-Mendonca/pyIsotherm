@@ -1,6 +1,6 @@
 import csv
 import pandas as pd
-from pyMono.Isotherm import Isotherm
+from pyIsotherm.Isotherm import Isotherm
 
 
 def load(path, p0=1, nist_csv=False):

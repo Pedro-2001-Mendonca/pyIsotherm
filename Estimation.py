@@ -1,8 +1,9 @@
-from pyMono.Models import obj_func
-from pyMono.Models import call_model
-from pyMono.Particle import Particle
-from pyMono.Isotherm import Isotherm
-from pyMono.Result import Result
+from pyIsotherm.Models import obj_func
+from pyIsotherm.Models import call_model
+from pyIsotherm.Particle import Particle
+from pyIsotherm.Isotherm import Isotherm
+from pyIsotherm.Result import Result
+from matplotlib import colors
 
 
 def estimate(p, qe, model, part_n=100, iter_n=100, param=[[0.1, 10], [1, 100], [0.1, 10]], comp_n=1, relative=False):
@@ -53,8 +54,7 @@ def estimate(p, qe, model, part_n=100, iter_n=100, param=[[0.1, 10], [1, 100], [
         exit(ValueError("ERROR: There are parameters that are infinite"))
 
     if any(n < 0 for n in swarm_best_position):
-        print(f'{'\033[93m'}WARNING: There are parameters that are negative')
-
+        print(f"\033[93mWARNING: There are parameters that are negative\033[0m")
 
     exp_iso = Isotherm(p, qe)
 

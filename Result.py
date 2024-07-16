@@ -1,8 +1,7 @@
 import numpy as np
 from scipy import stats
 from matplotlib import pyplot as plt
-from pyMono.Isotherm import Isotherm
-import subprocess
+from pyIsotherm.Isotherm import Isotherm
 
 
 class Result:
